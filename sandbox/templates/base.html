@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Sandbox | {% block page_title %}{% endblock %}</title>
+		<style>
+			body {
+				font-family: courier, serif;
+				padding:20px;
+				font-size:2em;
+			}
+		</style>
+		{% block extra_css %}{% endblock %}
+	</head>
+	<body>
+		{% block content %}
+		{% endblock content %}
+		<script src="/static/js/lib/jquery-1.7.2.js"></script>
+		<script src="/static/js/lib/underscore-min.js"></script>
+		<script src="/static/js/lib/backbone-min.js"></script>
+		{% block extra_js %}{% endblock %}
+	</body>
+</html>
