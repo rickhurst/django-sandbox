@@ -25,10 +25,10 @@
 
     addItem: function(){
       this.counter++;
-      var new_item = $('#new-item').val();
+      var new_item_val = $('#new-item').val();
 
-      if(new_item != ''){
-        $('ul', this.el).append('<li id="item' + this.counter + '">' + new_item + ' <input type="checkbox" name="item" value="' + this.counter + '" /></li>');
+      if(new_item_val != ''){
+        $('ul', this.el).append('<li id="item' + this.counter + '">' + new_item_val + ' <input type="checkbox" name="item" value="' + this.counter + '" /></li>');
       }
 
     },

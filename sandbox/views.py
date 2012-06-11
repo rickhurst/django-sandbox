@@ -18,3 +18,24 @@ def todo(request):
 
         c = RequestContext(request, context)
         return HttpResponse(t.render(c))
+
+
+def todo2(request):
+
+        t = loader.get_template('to-do-2.html')
+            
+        context = {}
+        context.update(common_template_vars)
+
+        c = RequestContext(request, context)
+        return HttpResponse(t.render(c))
+
+def todo3(request):
+
+        t = loader.get_template('to-do-3.html')
+            
+        context = {}
+        context.update(common_template_vars)
+
+        c = RequestContext(request, context)
+        return HttpResponse(t.render(c))
