@@ -1,9 +1,8 @@
 (function($){
-  // **ListView class**: Our main app view.
+  
   var ListView = Backbone.View.extend({    
     
     el: $('.list-wrapper'), // attaches `this.el` to an existing element.
-    // `initialize()`: Automatically called upon instantiation. Where you make all types of bindings, _excluding_ UI events, such as clicks, etc.
     
     events: {
       'click button#add': 'addItem',
@@ -35,7 +34,14 @@
     },
 
     updateItemStatus: function(event){
-      console.log($(event.currentTarget).attr('value'));
+      var clicked_item = $(event.currentTarget).attr('value');
+      var list_item = $('li#item' + clicked_item, this.el);
+      if(list_item.hasClass('done')){
+          list_item.removeClass('done');
+      } else {
+        list_item.addClass('done');
+      }
+      //console.log($(event.currentTarget).attr('value'));
     }
 
   });
