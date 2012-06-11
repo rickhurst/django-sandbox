@@ -1,0 +1,92 @@
+{% extends 's5_base.html' %}
+{% block content %}
+
+<div class="slide">
+<h1>Djerch - a really small Django CMS</h1>
+<h2>In fact not even a CMS - more of a Content Management Tool</h2>
+<h3>Rick Hurst</h3>
+<h4>Django developer at Potato</h4>
+</div>
+
+
+<div class="slide">
+<h1>Overview</h1>
+<ul class="incremental">
+	<li>an "inside out" Content Mangement Tool for Django based websites</li>
+	<li>Formerley known as "Snippets", but too many other apps with the same name!</li>
+	<li>add editable areas to a django template, shared or unique</li>
+	<li>Why? - many full blown CMS are overkill and want to "own" your site</li>
+	<li>use as a CMS for small, mostly static sites - similar use case to Perch (popular, small PHP CMS) </li>
+	<li>drop in to any other Django CMS to provide additional editing of micro-content (e.g. straplines, footer text)</li>
+</ul>
+
+</div>
+
+<div class="slide">
+	<h1>Overview pt 2</h1>
+	<ul class="incremental">
+		<li>template tag driven - add the template tag with a unique identifier, and if the snippet doesn't exist, it is automatically created</li>
+		<li>allows HTML editing, as some formatting is inevitably needed</li>
+		<li>plan to integrate WYSIWYG HTML editor with filtering</li>
+		<li>"Front End Editing" via javascript pop-up (jquery plugin provided)</li>
+	</ul>
+</div>
+
+<div class="slide">
+	<h1>Future Plans</h1>
+	<ul class="incremental">
+		<li>create djappengine version to use app engine models</li>
+		<li>"structured snippets" e.g. text + image with choice of micro-templates (borrow features from Perch)</li>
+		<li>some method of filesystem synchronisation to allow dynamic content to be put under version control</li>
+		<li>to keep this very small and not try to become a full CMS! Focus on making it a pluggable addition to other projects.</li>
+		<li>add caching (advice appreciated), as many tags = many db queries per page load.</li>
+	</ul>
+</div>
+
+
+<div class="slide">
+	<h1>Installation</h1>
+
+	<p>git clone https://github.com/rickhurst/django-snippets.git</p>
+
+	<p>Include the following lines in INSTALLED_APPS:-</p>
+
+<pre>
+'snippets',
+'snippets.templatetags',
+</pre>
+
+	<p>syncdb stuff to have the SQL created for the snippet model</p>
+
+</div>
+
+<div class="slide">
+	<h1>Use</h1>
+	<p>To add a snippet to a template, first include snippet_extras:-</p>
+<pre>
+load snippet_extras
+</pre>
+	<p>
+		Then add a tag in the following format:-
+<pre>
+get_snippet "footer"
+</pre>
+	</p>
+</div>
+
+{% endblock %}
+
+* an "inside out" Content Mangement Tool for Django based websites
+* add editable areas to a django template, shared or unique
+* use as a CMS for small, mostly static sites - similar use case to Perch (popular, small PHP CMS) 
+* drop in to any other Django CMS to provide additional editing of micro-content (e.g. straplines)
+* template tag driven - add the template tag with a unique identifier, and if the snippet doesn't exist, it is automatically created
+* allows HTML editing, as some formatting is inevitably needed - plan to integrate WYSIWYG HTML editor with filtering
+* similar projects around, including one with the same name!
+
+future plans:-
+* create djappengine version to use app engine models
+* "structured snippets" e.g. text + image with choice of micro-templates (borrow features from Perch)
+* some method of filesystem synchronisation to allow dynamic content to be put under version control
+* to keep this very small and not try to become a full CMS! Focus on making it a pluggable addition to other projects.
+* add caching (advice appreciated), as many tags = many db queries per page load.

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load snippet_extras %}
+
+{% block content %}
+	{% get_snippet "demo-content" %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/snippets.js"></script>
+{% endblock %}

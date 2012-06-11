@@ -118,6 +118,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'sandbox',
+    'snippets',
+    'snippets.templatetags',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
