@@ -9,7 +9,7 @@ urlpatterns = patterns('',
    url(r'^to-do-3/$', direct_to_template, {'template': 'to-do-3.html'}),
 
    # presentations
-   url(r'^presentation-djerch/$', direct_to_template, {'template': 'presentation-djerch.html'}),
+   url(r'^presentation-snippets/$', direct_to_template, {'template': 'presentation-snippets.html'}),
    url(r'^presentation-backbone/$', direct_to_template, {'template': 'presentation-backbone.html'}),
 
    #snippets demo

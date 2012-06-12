@@ -2,10 +2,17 @@
 
 
 	var Item = Backbone.Model.extend({
-		defaults: {
-			item_text: '',
-			item_id: ''
+
+		initialize: function(){
+			console.log('created new item');
 		}
+
+		// defaults: {
+		// 	item_text: '',
+		// 	item_id: ''
+		// },
+
+
 	});      
 	
 
@@ -42,6 +49,9 @@
 
 	      this.counter = 0;
 	      this.render();
+
+	      var item = new Item({item_text:"i'm new!"});
+	      this.collection.add(item);
 
 		},
 
