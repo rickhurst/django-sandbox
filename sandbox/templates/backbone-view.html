@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Backbone Views{% endblock %}
+
+{% block content %}
+<div id="container">
+	<button>go</button>
+</div>
+{% endblock content %}
+
+
+{% block extra_js %}
+<script>
+
+// based on: http://www.youtube.com/watch?v=_6pBvMK1Qgo&feature=relmfu
+
+	model = new Backbone.Model ({
+		data: [
+			{text: 'Southville JS', href: 'http://www.meetup.com/SouthvilleJS/'},
+			{text: 'SimpleWeb', href: 'http://simpleweb.co.uk/'},
+			{text: 'Backbone JS', href: 'http://backbonejs.org/'}
+		]
+	});
+
+	var View = Backbone.View.extend({
+
+		initialize: function(){
+	      
+	    },
+
+	    el: $('#container'),
+
+	    model: model,
+
+	    events: {
+	    	"click button": "render"
+	    },
+
+	    render: function() {
+	    	var data = this.model.get('data');
+	    	//console.log(data);
+	    	for(var i=0; i<data.length; i++){
+	    		console.log(data[i].text);
+	    	}
+	    }
+
+	});
+
+	var view = new View();
+
+</script>
+{% endblock %}

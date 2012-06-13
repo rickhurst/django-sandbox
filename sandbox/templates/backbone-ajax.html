@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Backbone Ajax/ Restful API interaction{% endblock %}
+
+{% block content %}
+<div id="container">
+	
+</div>
+{% endblock content %}
+
+
+{% block extra_js %}
+<script>
+
+// based on: http://www.youtube.com/watch?v=cpRimNEWlKw&feature=relmfu
+
+//Backbone.emulateHTTP = true; // uses POST instead of PUT , adds parameter _method=PUT
+//Backbone.emulateJSON = true; // sends JSON payload as parameter
+
+
+var Thing = Backbone.Model.extend({
+
+	initialize: function() {
+		console.log('ok');
+		this.on('all', function(e) { console.log(this.get('name') + " event: " + e) });
+	},
+
+	urlRoot: '/demo-api/'
+
+});
+
+var Things = Backbone.Collection.extend({
+
+	initialize: function(){
+		console.log('new collection of Things has been created');
+	},
+
+	url: '/demo-api/',
+
+	model: Thing
+
+});
+
+var thing = new Thing({id: '1', name:'demo'});
+thing.save();
+
+var things = new Things();
+//things.create({....});
+//things.reset(// embed dict in template from server-side tag);
+things.fetch();
+
+</script>
+{% endblock %}

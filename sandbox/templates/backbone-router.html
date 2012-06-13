@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Router{% endblock %}
+
+{% block content %}
+
+{% endblock content %}
+
+
+{% block extra_js %}
+<script>
+
+// http://www.youtube.com/watch?v=3K-rwgCclUM&feature=relmfu
+
+	var router = Backbone.Router.extend({
+
+		routes: {
+			"slug" : "func_match", // exact match
+			//"*slug" : "func" // splat - anything
+			//":slug/" : "func" // param - matches segment
+			//":slug/:id/" : "func" // param - matches segment
+			":slug/*splat" : "func" // param and splat, splat goes at the end
+		},
+
+		func: function(slug, id){
+			console.log('slug:' + slug);
+			console.log('id:' + id);
+		},
+
+		func_match: function( match){
+			console.log('matched');
+		}
+
+	});
+
+	new router();
+
+	Backbone.history.start();
+
+</script>
+{% endblock %}
