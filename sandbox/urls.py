@@ -16,4 +16,7 @@ urlpatterns = patterns('',
    url(r'^snippets-demo/$', direct_to_template, {'template': 'snippets-demo.html'}),
    (r'', include('snippets.urls')),
 
+	# backbone demo
+	url(r'^backbone-model/$', direct_to_template, {'template': 'backbone-model.html'}),
+
 )

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block extra_js %}
+<script>
+
+Thing = Backbone.Model.extend({
+
+	initialize: function() {
+		console.log("A new thing has been created");
+
+		// this.bind('change:cheese', function(){
+		// 	console.log("cheese has changed to " + this.get('cheese'));
+		// });
+
+		// this.bind('error', function(model, error){
+		// 	console.log(error);
+		// });
+	},
+
+	// defaults: {
+	// 	cheese: 'cheddar',
+	// 	beer: 'bitter'
+	// }
+
+	// validate: function(attributes){
+	// 	if(attributes.cheese == "dairylea"){
+	// 		return "Processed cheese not allowed!";
+	// 	}
+	// }
+
+});
+
+//var thing = new Thing({ beer: "lager", cheese: 'Brie'});
+//thing.set('cheese', 'feta');
+//thing.set({cheese:'feta', coffee: 'latte'})
+//console.log(thing.toJSON());
+
+</script>
+{% endblock %}
