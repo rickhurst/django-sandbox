@@ -21,8 +21,8 @@
 var Thing = Backbone.Model.extend({
 
 	initialize: function() {
-		console.log('ok');
-		this.on('all', function(e) { console.log(this.get('name') + " event: " + e) });
+		//console.log('ok');
+		//this.on('all', function(e) { console.log(this.get('name') + " event: " + e) });
 	},
 
 	urlRoot: '/demo-api/'
@@ -41,13 +41,13 @@ var Things = Backbone.Collection.extend({
 
 });
 
-var thing = new Thing({id: '1', name:'demo'});
-thing.save();
+//var thing = new Thing({id: '1', name:'demo'});
+//thing.save();
 
 var things = new Things();
 //things.create({....});
-//things.reset(// embed dict in template from server-side tag);
-things.fetch();
+things.reset(//);
+//things.fetch();
 
 </script>
 {% endblock %}

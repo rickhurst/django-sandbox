@@ -15,12 +15,17 @@
 	var router = Backbone.Router.extend({
 
 		routes: {
-			"slug" : "func_match", // exact match
+			//"slug" : "func_match", // exact match
 			//"*slug" : "func" // splat - anything
 			//":slug/" : "func" // param - matches segment
 			//":slug/:id/" : "func" // param - matches segment
-			":slug/*splat" : "func" // param and splat, splat goes at the end
+			//":slug/*splat" : "func" // param and splat, splat goes at the end
 		},
+
+		// func: function(foo){
+		// 	console.log(foo);
+		// 	//console.log('id:' + id);
+		// },
 
 		func: function(slug, id){
 			console.log('slug:' + slug);
